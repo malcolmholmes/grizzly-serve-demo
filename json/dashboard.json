@@ -1,0 +1,36 @@
+{
+   "graphTooltip": 1,
+   "panels": [
+  	{
+     	"datasource": {
+        	"type": "datasource",
+        	"uid": "-- Mixed --"
+     	},
+     	"fieldConfig": {
+        	"defaults": {
+           	"unit": "reqps"
+        	}
+     	},
+     	"gridPos": {
+        	"h": 8,
+        	"w": 24
+     	},
+     	"id": 1,
+     	"pluginVersion": "v11.0.0",
+     	"targets": [
+        	{
+           	"datasource": {
+              	"type": "datasource",
+              	"uid": "grafana"
+           	},
+           	"queryType": "randomWalk"
+        	}
+     	],
+     	"title": "Requests / sec",
+     	"type": "timeseries"
+  	}
+   ],
+   "schemaVersion": 39,
+   "title": "Example dashboard",
+   "uid": "example-dashboard"
+}
