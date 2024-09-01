@@ -14,6 +14,7 @@ def makeDashboard():
       .unit("reqps")
       .with_target(
         testdata.Dataquery().query_type('randomWalk')
+        .datasource(DataSourceRef(uid="grafana", type_val="grafana"))
       )
       .span(24)
       .height(8)
