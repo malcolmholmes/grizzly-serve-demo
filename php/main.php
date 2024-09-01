@@ -1,6 +1,8 @@
 <?php
 
-namespace Dashboard\Example;
+//namespace Dashboard\Example;
+
+require __DIR__ . '/vendor/autoload.php';
 
 use Grafana\Foundation\Common;
 use Grafana\Foundation\Common\GraphDrawStyle;
@@ -25,7 +27,7 @@ use Grafana\Foundation\Dashboard\TimePickerBuilder;
 use Grafana\Foundation\Testdata;
 use Grafana\Foundation\Timeseries;
 
-function makeDashboard(): SDKDashboard\Dashboard {
+function makeDashboard(): string {
     $builder = (new DashboardBuilder(title: 'Example Dashboard'))
 		->uid('example-dashboard')
 		->description('Example Dashboard for Grizzly')
@@ -41,9 +43,10 @@ function makeDashboard(): SDKDashboard\Dashboard {
 			  )
 			->span(24)
 			->height(8)
-      );
+		);
+    $json = $builder->build();
 
-	return json_encode($builder.build(), JSON_PRETTY_PRINT).PHP_EOL;
+	return json_encode($json, JSON_PRETTY_PRINT).PHP_EOL;
 }
 
 echo makeDashboard();
