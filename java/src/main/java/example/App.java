@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.grafana.foundation.dashboard.Dashboard;
 import com.grafana.foundation.dashboard.DashboardCursorSync;
 import com.grafana.foundation.testdata.Dataquery;
+import com.grafana.foundation.testdata.Datasource;
 import com.grafana.foundation.timeseries.PanelBuilder;
 
 public class App {
@@ -20,7 +21,13 @@ public class App {
                         span(24).
                         height(8).
                         withTarget(
-                            new Dataquery.Builder().queryType("randomWalk")
+                            new Dataquery.Builder().
+                                datasource(
+                                    new Datasource.Builder().
+                                        uid("grafana").
+                                        type("grafana")
+                                ).
+                                queryType("randomWalk")
                         )
             ).build();
 
