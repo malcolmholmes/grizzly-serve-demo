@@ -13,7 +13,7 @@ function makeDashboard() {
       .unit("reqps")
       .withTarget(
         new testdata.DataqueryBuilder().queryType('randomWalk')
-        .datasource({uid: "grafana", type: "grafana"})
+        .datasource(new testdata.DatasourceBuilder().uid('grafana').type('grafana'))
       )
       .span(24)
       .height(8)
