@@ -46,7 +46,7 @@ function makeDashboard(): string {
 		);
     $json = $builder->build();
 
-	return json_encode($json, JSON_PRETTY_PRINT).PHP_EOL;
+	return json_encode($json, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES).PHP_EOL;
 }
 
 echo makeDashboard();
