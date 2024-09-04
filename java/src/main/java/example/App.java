@@ -1,6 +1,10 @@
 package example;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.grafana.foundation.dashboard.Dashboard;
 import com.grafana.foundation.dashboard.DashboardCursorSync;
 import com.grafana.foundation.testdata.Dataquery;
@@ -32,9 +36,12 @@ public class App {
             ).build();
 
         try {
-            System.out.println(dashboard.toJSON());
+            ObjectMapper om = new ObjectMapper();
+            om.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+            System.out.println(om.writerWithDefaultPrettyPrinter().writeValueAsString(dashboard));
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+
     }
 }
