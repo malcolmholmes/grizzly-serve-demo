@@ -36,9 +36,7 @@ public class App {
             ).build();
 
         try {
-            ObjectMapper om = new ObjectMapper();
-            om.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-            System.out.println(om.writerWithDefaultPrettyPrinter().writeValueAsString(dashboard));
+            System.out.println(dashboard.toJSON());
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
