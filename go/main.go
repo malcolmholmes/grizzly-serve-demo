@@ -3,19 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-
-	"github.com/grafana/grafana-foundation-sdk/go/cog"
+	
 	"github.com/grafana/grafana-foundation-sdk/go/dashboard"
 	"github.com/grafana/grafana-foundation-sdk/go/testdata"
 	"github.com/grafana/grafana-foundation-sdk/go/timeseries"
 )
 
-func grafanaDatasourceRef() dashboard.DataSourceRef {
-	return dashboard.DataSourceRef{
-		Uid:  cog.ToPtr("grafana"),
-		Type: cog.ToPtr("grafana"),
-	}
-}
 func makeDashboard() string {
 	builder := dashboard.NewDashboardBuilder("Example dashboard").
 		Uid("example-dashboard").
@@ -27,7 +20,7 @@ func makeDashboard() string {
 				Unit("reqps").
 				WithTarget(
 					testdata.NewDataqueryBuilder().QueryType("randomWalk").
-						Datasource(grafanaDatasourceRef()),
+						Datasource(testdata.NewDatasourceBuilder().Uid("grafana").Type("grafana")),
 				).
 				Span(24).
 				Height(8),
@@ -36,7 +29,7 @@ func makeDashboard() string {
 	if err != nil {
 		panic(err)
 	}
-
+	
 	dashboardJson, err := json.MarshalIndent(dashboard, "", "  ")
 	if err != nil {
 		panic(err)
