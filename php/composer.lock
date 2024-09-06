@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/grafana/grafana-foundation-sdk.git",
-                "reference": "e815f3a62700b1347b000119a1e79a59bc420c00"
+                "reference": "1126a3fde9fc690d4ca8fedf78cf0a16f6598b45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/grafana/grafana-foundation-sdk/zipball/e815f3a62700b1347b000119a1e79a59bc420c00",
-                "reference": "e815f3a62700b1347b000119a1e79a59bc420c00",
+                "url": "https://api.github.com/repos/grafana/grafana-foundation-sdk/zipball/1126a3fde9fc690d4ca8fedf78cf0a16f6598b45",
+                "reference": "1126a3fde9fc690d4ca8fedf78cf0a16f6598b45",
                 "shasum": ""
             },
             "type": "library",
@@ -44,7 +44,7 @@
                 "issues": "https://github.com/grafana/grafana-foundation-sdk/issues",
                 "source": "https://github.com/grafana/grafana-foundation-sdk/tree/v11.0.x+cog-v0.0.x"
             },
-            "time": "2024-08-01T14:27:29+00:00"
+            "time": "2024-09-05T15:16:13+00:00"
         }
     ],
     "packages-dev": [],
@@ -57,5 +57,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }

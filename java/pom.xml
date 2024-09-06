@@ -13,11 +13,19 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>local</id>
+            <name>local</name>
+            <url>~/.m2/repository</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>com.grafana</groupId>
             <artifactId>grafana-foundation-sdk</artifactId>
-            <version>11.0.0-1722522290</version>
+            <version>11.0.0-1725620578</version>
         </dependency>
     </dependencies>
 
