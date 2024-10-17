@@ -22,6 +22,7 @@ use Grafana\Foundation\Dashboard\DashboardBuilder;
 use Grafana\Foundation\Dashboard\DashboardCursorSync;
 use Grafana\Foundation\Dashboard\DashboardLinkBuilder;
 use Grafana\Foundation\Dashboard\DashboardLinkType;
+use Grafana\Foundation\Dashboard\DataSourceRef;
 use Grafana\Foundation\Dashboard\RowBuilder;
 use Grafana\Foundation\Dashboard\TimePickerBuilder;
 use Grafana\Foundation\Testdata;
@@ -39,7 +40,7 @@ function makeDashboard(): string {
 			->withTarget(
 				(new Testdata\DataqueryBuilder())
 			            ->queryType('randomWalk')
-			            ->datasource((new Testdata\DatasourceBuilder())->type('grafana')->uid('grafana'))
+			            ->datasource((new DataSourceRef('grafana', 'grafana')))
 			  )
 			->span(24)
 			->height(8)
