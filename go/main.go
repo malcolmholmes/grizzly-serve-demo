@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	
+	"github.com/grafana/grafana-foundation-sdk/go/cog"
 	"github.com/grafana/grafana-foundation-sdk/go/dashboard"
 	"github.com/grafana/grafana-foundation-sdk/go/testdata"
 	"github.com/grafana/grafana-foundation-sdk/go/timeseries"
@@ -20,7 +21,7 @@ func makeDashboard() string {
 				Unit("reqps").
 				WithTarget(
 					testdata.NewDataqueryBuilder().QueryType("randomWalk").
-						Datasource(testdata.NewDatasourceBuilder().Uid("grafana").Type("grafana")),
+						Datasource(dashboard.DataSourceRef{Uid: cog.ToPtr("grafana"), Type: cog.ToPtr("grafana")}),
 				).
 				Span(24).
 				Height(8),
