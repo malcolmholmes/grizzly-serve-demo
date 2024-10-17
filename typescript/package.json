@@ -11,12 +11,12 @@
     "build:watch": "tsc -w -p tsconfig.json"
   },
   "dependencies": {
-    "@grafana/grafana-foundation-sdk": "~11.0.0-cogv0.0.x.1725547658",
+    "@grafana/grafana-foundation-sdk": "~11.2.0-cogv0.0.x.1726142473",
     "tslib": "~2.7"
   },
   "devDependencies": {
-    "@types/node": "~22",
+    "@types/node": "^22.7.5",
     "ts-node": "^10.9.2",
-    "typescript": "~5.5"
+    "typescript": "^5.6.3"
   }
 }
