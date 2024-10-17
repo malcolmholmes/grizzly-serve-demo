@@ -16,8 +16,8 @@ def makeDashboard():
             .with_target(
                 testdata.Dataquery().query_type('randomWalk')
                 .datasource(DataSourceRef(
-                    uid='testdata',
-                    type_val='testdata'
+                    uid='grafana',
+                    type_val='grafana'
                 ))
             )
             .span(24)
